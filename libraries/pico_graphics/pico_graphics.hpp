@@ -85,6 +85,7 @@ namespace pimoroni {
     void polygon(const std::vector<Point> &points);
     void triangle(Point p1, Point p2, Point p3);
     void line(Point p1, Point p2);
+    void scroll(int xstep, int ystep);
   };
 
 }

@@ -187,7 +187,7 @@ mp_obj_t picoexplorer_set_pen(mp_uint_t n_args, const mp_obj_t *args) {
 
 mp_obj_t picoexplorer_create_pen(mp_obj_t r_obj, mp_obj_t g_obj, mp_obj_t b_obj) {
     int pen = 0;
-    
+
     if(explorer != nullptr) {
         int r = mp_obj_get_int(r_obj);
         int g = mp_obj_get_int(g_obj);
@@ -361,4 +361,18 @@ mp_obj_t picoexplorer_text(mp_uint_t n_args, const mp_obj_t *args) {
 
     return mp_const_none;
 }
+
+mp_obj_t picoexplorer_scroll(mp_obj_t xstep_obj, mp_obj_t ystep_obj) {
+    if(explorer != nullptr) {
+        int xstep = mp_obj_get_int(xstep_obj);
+        int ystep = mp_obj_get_int(ystep_obj);
+
+        explorer->scroll(xstep, ystep);
+    }
+    else
+        mp_raise_msg(&mp_type_RuntimeError, NOT_INITIALISED_MSG);
+
+    return mp_const_none;
+}
+
 }

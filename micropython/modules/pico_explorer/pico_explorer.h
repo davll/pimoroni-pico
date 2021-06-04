@@ -25,3 +25,4 @@ extern mp_obj_t picoexplorer_rectangle(mp_uint_t n_args, const mp_obj_t *args);
 extern mp_obj_t picoexplorer_circle(mp_obj_t x_obj, mp_obj_t y_obj, mp_obj_t r_obj);
 extern mp_obj_t picoexplorer_character(mp_uint_t n_args, const mp_obj_t *args);
 extern mp_obj_t picoexplorer_text(mp_uint_t n_args, const mp_obj_t *args);
+extern mp_obj_t picoexplorer_scroll(mp_obj_t xstep_obj, mp_obj_t ystep_obj);

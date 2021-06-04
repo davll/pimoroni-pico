@@ -331,4 +331,32 @@ namespace pimoroni {
       }
     }
   }
+
+  void PicoGraphics::scroll(int xstep, int ystep) {
+    // borrowed from micropython/modframebuf.c
+    int sx, y, xend, yend, dx, dy;
+    if (xstep < 0) {
+      sx = 0;
+      xend = bounds.w + xstep;
+      dx = 1;
+    } else {
+      sx = bounds.w - 1;
+      xend = xstep - 1;
+      dx = -1;
+    }
+    if (ystep < 0) {
+      y = 0;
+      yend = bounds.h + ystep;
+      dy = 1;
+    } else {
+      y = bounds.h - 1;
+      yend = ystep - 1;
+      dy = -1;
+    }
+    for (; y != yend; y += dy) {
+      for (int x = sx; x != xend; x += dx) {
+        *ptr(x, y) = *ptr(x - xstep, y - ystep);
+      }
+    }
+  }
 }

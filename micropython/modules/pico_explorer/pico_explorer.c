@@ -69,7 +69,7 @@ STATIC MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(picoexplorer_rectangle_obj, 4, 4, pic
 STATIC MP_DEFINE_CONST_FUN_OBJ_3(picoexplorer_circle_obj, picoexplorer_circle);
 STATIC MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(picoexplorer_character_obj, 3, 4, picoexplorer_character);
 STATIC MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(picoexplorer_text_obj, 4, 5, picoexplorer_text);
-
+STATIC MP_DEFINE_CONST_FUN_OBJ_2(picoexplorer_scroll_obj, picoexplorer_scroll);
 
 /***** Globals Table *****/
 STATIC const mp_map_elem_t picoexplorer_globals_table[] = {
@@ -95,6 +95,7 @@ STATIC const mp_map_elem_t picoexplorer_globals_table[] = {
     { MP_ROM_QSTR(MP_QSTR_circle), MP_ROM_PTR(&picoexplorer_circle_obj) },
     { MP_ROM_QSTR(MP_QSTR_character), MP_ROM_PTR(&picoexplorer_character_obj) },
     { MP_ROM_QSTR(MP_QSTR_text), MP_ROM_PTR(&picoexplorer_text_obj) },
+    { MP_ROM_QSTR(MP_QSTR_scroll), MP_ROM_PTR(&picoexplorer_scroll_obj) },
     { MP_ROM_QSTR(MP_QSTR_BUTTON_A), MP_ROM_INT(BUTTON_A) },
     { MP_ROM_QSTR(MP_QSTR_BUTTON_B), MP_ROM_INT(BUTTON_B) },
     { MP_ROM_QSTR(MP_QSTR_BUTTON_X), MP_ROM_INT(BUTTON_X) },
